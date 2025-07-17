@@ -1,14 +1,17 @@
 import React from 'react';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 
 const FilterSidebar = ({ filters, onChange }) => (
-  <div className="bg-gray-100 p-4 rounded shadow rtl">
-    <h3 className="font-bold mb-2 text-right">فیلترها</h3>
-    <input name="city" value={filters.city} onChange={onChange} placeholder="شهر" className="mb-2 p-2 border rounded text-right w-full" />
-    <input name="category" value={filters.category} onChange={onChange} placeholder="دسته‌بندی" className="mb-2 p-2 border rounded text-right w-full" />
-    <input name="price_min" value={filters.price_min} onChange={onChange} placeholder="حداقل قیمت" className="mb-2 p-2 border rounded text-right w-full" />
-    <input name="price_max" value={filters.price_max} onChange={onChange} placeholder="حداکثر قیمت" className="mb-2 p-2 border rounded text-right w-full" />
-    <input name="text" value={filters.text} onChange={onChange} placeholder="جستجو" className="mb-2 p-2 border rounded text-right w-full" />
-  </div>
+  <Paper elevation={3} sx={{ borderRadius: 3, p: 3, direction: 'rtl', position: 'sticky', top: 64, display: 'flex', flexDirection: 'column', gap: 2 }}>
+    <Typography variant="h6" fontWeight={800} color="primary" align="right" gutterBottom>فیلترها</Typography>
+    <TextField name="city" value={filters.city} onChange={onChange} label="شهر" variant="outlined" size="small" sx={{ mb: 2 }} fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+    <TextField name="category" value={filters.category} onChange={onChange} label="دسته‌بندی" variant="outlined" size="small" sx={{ mb: 2 }} fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+    <TextField name="price_min" value={filters.price_min} onChange={onChange} label="حداقل قیمت" variant="outlined" size="small" sx={{ mb: 2 }} fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+    <TextField name="price_max" value={filters.price_max} onChange={onChange} label="حداکثر قیمت" variant="outlined" size="small" sx={{ mb: 2 }} fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+    <TextField name="text" value={filters.text} onChange={onChange} label="جستجو" variant="outlined" size="small" sx={{ mb: 2 }} fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+  </Paper>
 );
 
 export default FilterSidebar;

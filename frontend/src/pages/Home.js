@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import AdList from '../components/AdList';
 import FilterSidebar from '../components/FilterSidebar';
 import axios from '../api';
@@ -16,10 +18,16 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-row-reverse rtl">
-      <div className="w-1/4"><FilterSidebar filters={filters} onChange={handleFilterChange} /></div>
-      <div className="w-3/4"><AdList ads={ads} /></div>
-    </div>
+    <Box sx={{ maxWidth: '1200px', mx: 'auto', px: 2, py: 4, direction: 'rtl' }}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={3}>
+          <FilterSidebar filters={filters} onChange={handleFilterChange} />
+        </Grid>
+        <Grid item xs={12} md={9}>
+          <AdList ads={ads} />
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

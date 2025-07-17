@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Typography from '@mui/material/Typography';
 
 const AdForm = ({ onSubmit }) => {
   const [form, setForm] = useState({ title: '', description: '', price: '', city: '', category: '', images: null });
@@ -14,15 +21,25 @@ const AdForm = ({ onSubmit }) => {
   };
 
   return (
-    <form className="bg-white p-4 rounded shadow flex flex-col rtl" onSubmit={handleSubmit}>
-      <input name="title" value={form.title} onChange={handleChange} placeholder="عنوان" className="mb-2 p-2 border rounded text-right" />
-      <textarea name="description" value={form.description} onChange={handleChange} placeholder="توضیحات" className="mb-2 p-2 border rounded text-right" />
-      <input name="price" value={form.price} onChange={handleChange} placeholder="قیمت" className="mb-2 p-2 border rounded text-right" />
-      <input name="city" value={form.city} onChange={handleChange} placeholder="شهر" className="mb-2 p-2 border rounded text-right" />
-      <input name="category" value={form.category} onChange={handleChange} placeholder="دسته‌بندی" className="mb-2 p-2 border rounded text-right" />
-      <input type="file" name="images" onChange={handleChange} className="mb-2" />
-      <button type="submit" className="bg-green-600 text-white py-2 rounded">ثبت آگهی</button>
-    </form>
+    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2, bgcolor: 'background.paper', borderRadius: 2, boxShadow: 3, p: 3, direction: 'rtl' }}>
+      <Typography variant="h6" fontWeight={700} color="primary" align="right" gutterBottom>
+        اطلاعات آگهی
+      </Typography>
+      <TextField name="title" value={form.title} onChange={handleChange} label="عنوان" variant="outlined" fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+      <TextField name="description" value={form.description} onChange={handleChange} label="توضیحات" variant="outlined" multiline rows={3} fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+      <TextField name="price" value={form.price} onChange={handleChange} label="قیمت" variant="outlined" fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+      <TextField name="city" value={form.city} onChange={handleChange} label="شهر" variant="outlined" fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+      <TextField name="category" value={form.category} onChange={handleChange} label="دسته‌بندی" variant="outlined" fullWidth inputProps={{ style: { textAlign: 'right' } }} />
+      <FormControl fullWidth>
+        <InputLabel shrink htmlFor="images">تصویر</InputLabel>
+        <input type="file" name="images" id="images" onChange={handleChange} style={{ marginTop: 8 }} />
+      </FormControl>
+      <Stack direction="row" justifyContent="flex-end">
+        <Button type="submit" variant="contained" color="success" size="large" sx={{ borderRadius: 2, fontWeight: 700 }}>
+          ثبت آگهی
+        </Button>
+      </Stack>
+    </Box>
   );
 };
 
