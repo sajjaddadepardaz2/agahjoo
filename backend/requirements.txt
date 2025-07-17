@@ -1,0 +1,7 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+django-storages
+Pillow
+django-filter
+python-dotenv
