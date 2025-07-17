@@ -10,6 +10,10 @@ import PostAd from './pages/PostAd';
 function App() {
   return (
     <Router>
+      <div className="flex justify-end items-center p-4 gap-2 bg-gray-100 rtl">
+        <a href="/login" className="bg-green-600 text-white px-4 py-2 rounded">ورود / ثبت‌نام</a>
+        <a href="/post-ad" className="bg-blue-600 text-white px-4 py-2 rounded">ثبت آگهی جدید</a>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
