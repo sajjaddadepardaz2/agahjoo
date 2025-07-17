@@ -11,18 +11,18 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-200 rtl flex flex-col">
-        <nav className="sticky top-0 z-10 bg-surface/80 backdrop-blur-md shadow-md border-b border-outline px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            {/* Title removed as requested */}
-          </div>
-          <div className="flex gap-2">
-            <a href="/login" className="flex items-center gap-2 bg-primary text-on-primary px-5 py-2 rounded-3xl shadow transition font-bold hover:bg-primary-dark">
+        <nav className="sticky top-0 z-10 bg-white/90 backdrop-blur-md shadow-sm border-b border-blue-100 px-6 py-3 flex items-center justify-between" style={{ fontFamily: 'Vazirmatn' }}>
+          <a href="/login" style={{ textDecoration: 'none' }}>
+            <button className="flex items-center gap-2 px-4 py-2 rounded-3xl bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold shadow-none border border-blue-200 transition" style={{ fontFamily: 'Vazirmatn' }}>
               <MdLogin size={22} /> ورود / ثبت‌نام
-            </a>
-            <a href="/post-ad" className="flex items-center gap-2 bg-secondary text-on-secondary px-5 py-2 rounded-3xl shadow transition font-bold hover:bg-secondary-dark">
+            </button>
+          </a>
+          <div></div>
+          <a href="/post-ad" style={{ textDecoration: 'none' }}>
+            <button className="flex items-center gap-2 px-4 py-2 rounded-3xl bg-green-50 hover:bg-green-100 text-green-700 font-bold shadow-none border border-green-200 transition" style={{ fontFamily: 'Vazirmatn' }}>
               <MdAddCircleOutline size={22} /> ثبت آگهی جدید
-            </a>
-          </div>
+            </button>
+          </a>
         </nav>
         <main className="flex-1 flex justify-center items-start pt-10 pb-10">
           <div className="w-full max-w-6xl mx-auto px-4">

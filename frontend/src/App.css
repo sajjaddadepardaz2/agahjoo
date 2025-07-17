@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+
+.App, body, input, textarea, button, select, label, h1, h2, h3, h4, h5, h6, p, span, div, .MuiTypography-root, .MuiButton-root, .MuiInputBase-root, .MuiFormControl-root {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
 }
 
 .App-logo {
@@ -15,13 +18,15 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 64px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 0 32px;
+  font-size: 1.25rem;
   color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .App-link {
