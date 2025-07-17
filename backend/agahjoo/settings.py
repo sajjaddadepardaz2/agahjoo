@@ -131,3 +131,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# SMS API Key for OTP
+import os
+SMS_API_KEY = os.environ.get('SMS_API_KEY', 'hg9MHdoYAK73rGtM5FzadcJeZl98SH2pLQhddngzRTQjE4bgfRbpWQ7nBdbnRdtH')
+
+
